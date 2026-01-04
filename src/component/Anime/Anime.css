@@ -1,0 +1,65 @@
+.button-search-anime-div{
+    background-color: #fff;
+    width: 100%;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.style-button-anime{
+    flex: 1;
+    background: none;
+    border: none;
+    width: 100%;    
+    padding: 0 20px;
+    
+}
+
+.button-search-anime-div h2{
+    flex: 3;
+    color: inherit;
+    background-color: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.button-search-anime-div svg{
+    flex: 3;
+    color: inherit;
+    background-color: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.anime-function{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+
+.anime-page{
+    height: auto;
+}
+
+
+.anime-carts{
+    background-color: inherit;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
