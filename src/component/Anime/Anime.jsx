@@ -1,10 +1,25 @@
+import { useEffect, useState } from "react";
 import Cart from '../Cart/Cart';
 import './Anime.css';
-import tatsuki from '../../assets/tatsuki_fudjimoto_17_26.jpeg';
-import porce from '../../assets/this_porce.jpeg';
+// import tatsuki from '../../assets/tatsuki_fudjimoto_17_26.jpeg';
+// import porce from '../../assets/this_porce.jpeg';
+
 
 
 const Anime = () => {
+
+
+  const [cards, setCards] = useState([]);
+
+
+    useEffect(() => {
+        fetch("http://localhost:5104/api/cards")
+            .then(res => res.json())
+            .then(data => setCards(data))
+            .catch(err => console.error(err));
+    }, []);
+
+
 
 
     return (
@@ -64,8 +79,20 @@ const Anime = () => {
 
 
             <div className='anime-carts'>
-                                <Cart id={1} imgCart={tatsuki} title="tatsiki-fidjimoto-17-16" seriesCount={8} whatched={122882} year={2025} sisonCount={1} />
-                <Cart id={2} imgCart={porce} title="ця порцелянова лялечка" seriesCount={12} whatched={543882} year={2025} sisonCount={2} />
+                {/* <Cart id={1} imgCart={tatsuki} title="tatsiki-fidjimoto-17-16" seriesCount={8} whatched={122882} year={2025} sisonCount={1} />
+                <Cart id={2} imgCart={porce} title="ця порцелянова лялечка" seriesCount={12} whatched={543882} year={2025} sisonCount={2} /> */}
+
+                {cards.map(card => (
+                    <Cart
+                    key={card.id}
+                    imgCart={card.linkToImg}
+                    title={card.title}
+                    seriesCount={card.seriesCount}
+                    whatched={card.watched}
+                    year={card.yaer}
+                    sisonCount={card.sisonCount}
+                    />
+                ))}
             </div>
 
         </div>
